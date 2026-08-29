@@ -5,7 +5,6 @@ import '../../models/user.dart';
 import '../banks/banks_list_screen.dart';
 import '../contents/contents_screen.dart';
 import '../dashboard/dashboard_screen.dart';
-import '../appointment/my_appointment_screen.dart';
 import '../login/login_screen.dart';
 
 /// Descreve uma aba da navegação principal.
@@ -46,11 +45,6 @@ class _HomeShellState extends State<HomeShell> {
         title: 'Buscar Bancos',
         icon: Icons.location_on_outlined,
         body: BanksListScreen(),
-      ),
-      const _ShellTab(
-        title: 'Meu Agendamento',
-        icon: Icons.event_available_outlined,
-        body: MyAppointmentScreen(),
       ),
       if (widget.user.isAdmin)
         const _ShellTab(
