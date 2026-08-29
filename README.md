@@ -28,13 +28,18 @@ de leite materno mais simples, segura e acolhedora.
 O NutriLink é o hub digital que aproxima as mães doadoras dos bancos de leite
 humano. Pelo app, a nutriz pode:
 
-- **Aprender** com conteúdos educativos sobre extração, armazenamento,
-  amamentação e doação;
-- **Encontrar** o banco de leite mais próximo e ver seus detalhes;
-- **Agendar** uma visita/coleta e **acompanhar** o status do agendamento.
+- **Aprender** com conteúdos educativos (textos + videoaulas) sobre extração,
+  armazenamento, amamentação e doação;
+- **Encontrar** o banco de leite mais próximo, ver seus detalhes num mapa e
+  **ligar** para agendar a visita.
 
 O app também possui um perfil **administrador**, com um **dashboard** de
 indicadores da rede — reforçando o controle de acesso por tipo de usuário.
+
+> **Por que o agendamento é por telefone?** Muitos bancos de leite do Brasil
+> atendem apenas por telefone fixo. Em vez de simular um ecossistema único de
+> agendamento, o app abre o **discador do celular** com o número do banco —
+> uma solução realista e coerente com o contexto.
 
 ---
 
@@ -51,8 +56,8 @@ O app abre na tela de login. Use uma das contas mockadas:
 
 | Perfil | E-mail | Senha | Acesso |
 |---|---|---|---|
-| **Nutriz** | `nutriz@nutrilink.com` | `123456` | Conteúdos, Buscar Bancos, Meu Agendamento |
-| **Administrador** | `adm@nutrilink.com` | `123456` | Todas as anteriores **+ Dashboard** |
+| **Nutriz** | `nutriz@nutrilink.com` | `123456` | Conteúdos, Buscar Bancos |
+| **Administrador** | `adm@nutrilink.com` | `123456` | Conteúdos, Buscar Bancos **+ Dashboard** |
 
 > Na própria tela de login há um atalho para preencher as credenciais.
 
@@ -60,82 +65,54 @@ O app abre na tela de login. Use uma das contas mockadas:
 
 ## 📱 Telas do aplicativo
 
-### 1. Splash
-Tela de abertura com a identidade visual do NutriLink, exibida por alguns
-instantes antes de encaminhar o usuário ao login.
+### 1. Splash e 2. Login
+Abertura com a identidade visual do NutriLink, seguida do login — que valida
+as credenciais mockadas e direciona o usuário conforme o perfil.
 
-![Splash](docs/screenshots/01_splash.png)
+<img src="docs/screenshots/01_splash.png" width="240"/> <img src="docs/screenshots/02_login.png" width="240"/>
 
-### 2. Login
-Porta de entrada e apresentação do app. Valida e-mail/senha contra as contas
-mockadas e direciona o usuário conforme o perfil (nutriz ou administrador).
+### 3. Conteúdos e 4. Detalhe do Conteúdo
+Espaço educativo com guias filtráveis por categoria. Cada guia tem texto e uma
+**videoaula** (representada por uma thumbnail mockada). O detalhe é aberto por
+**passagem de parâmetro**.
 
-![Login](docs/screenshots/02_login.png)
+<img src="docs/screenshots/03_contents.png" width="240"/> <img src="docs/screenshots/04_content_detail.png" width="240"/>
 
-### 3. Conteúdos
-Espaço educativo com guias e artigos, filtráveis por categoria (Extração,
-Armazenamento, Amamentação, Doação).
+### 5. Buscar Bancos e 6. Detalhe do Banco
+Listagem dos bancos com busca e filtro por rede (Lactare / rBLH). O detalhe —
+recebido por **passagem de parâmetro** — mostra um **mapa ilustrativo** com a
+localização, além de endereço, horário e telefone.
 
-![Conteúdos](docs/screenshots/03_contents.png)
+<img src="docs/screenshots/05_banks.png" width="240"/> <img src="docs/screenshots/06_bank_detail.png" width="240"/>
 
-### 4. Detalhe do Conteúdo
-Artigo completo, com o texto dividido em seções — recebe o conteúdo
-selecionado por **passagem de parâmetro**.
+### 7. Ligar para agendar
+Ao tocar em **"Ligar para agendar"**, o app abre o **discador do celular** com
+o telefone do banco selecionado.
 
-![Detalhe do Conteúdo](docs/screenshots/04_content_detail.png)
+<img src="docs/screenshots/07_bank_call.png" width="240"/>
 
-### 5. Buscar Bancos
-Listagem dos Bancos de Leite Humano com busca por nome/endereço e filtro por
-rede (Lactare / rBLH), mostrando status (aberto/fechado), avaliação e distância.
+### 8. Dashboard e 9. Origem dos acessos (somente administrador)
+Visão gerencial com **filtro de novos cadastros** por período (dia/semana/mês/
+ano), **total de nutrizes cadastradas**, **taxa de comprometimento**, **taxa de
+adesão** e um **gráfico** da origem dos acessos (WhatsApp, App, Web).
 
-![Buscar Bancos](docs/screenshots/05_banks.png)
-
-### 6. Detalhe do Banco
-Informações completas do banco selecionado (endereço, horário, telefone,
-distância) e botão para iniciar o agendamento — também via **passagem de
-parâmetro**.
-
-![Detalhe do Banco](docs/screenshots/06_bank_detail.png)
-
-### 7. Agendar Visita (formulário)
-Formulário para agendar a coleta: nome da doadora, data (date picker), horário
-e tipo de atendimento, com validações.
-
-![Formulário de Agendamento](docs/screenshots/07_appointment_form.png)
-
-### 8. Confirmação
-Retorno visual após o agendamento, com o resumo e o número de referência
-gerado.
-
-![Confirmação](docs/screenshots/08_confirmation.png)
-
-### 9. Meu Agendamento
-Lista os agendamentos da nutriz com seus status. Os agendamentos criados no
-formulário aparecem aqui automaticamente.
-
-![Meu Agendamento](docs/screenshots/09_my_appointment.png)
-
-### 10. Dashboard (administrador)
-Visão gerencial exclusiva do admin: indicadores da rede e lista de
-agendamentos recentes das nutrizes.
-
-![Dashboard](docs/screenshots/10_dashboard.png)
+<img src="docs/screenshots/08_dashboard.png" width="240"/> <img src="docs/screenshots/09_dashboard_chart.png" width="240"/>
 
 ---
 
 ## 🧭 Fluxo de navegação
 
 ```
-Splash → Login ─┬─ (nutriz) → [ Conteúdos | Buscar Bancos | Meu Agendamento ]
-                └─ (admin)  → [ Conteúdos | Buscar Bancos | Meu Agendamento | Dashboard ]
+Splash → Login ─┬─ (nutriz) → [ Conteúdos | Buscar Bancos ]
+                └─ (admin)  → [ Conteúdos | Buscar Bancos | Dashboard ]
 
-Buscar Bancos → Detalhe do Banco → Agendar Visita → Confirmação → Meu Agendamento
-Conteúdos → Detalhe do Conteúdo
+Buscar Bancos → Detalhe do Banco → "Ligar para agendar" (abre o discador)
+Conteúdos → Detalhe do Conteúdo (texto + videoaula)
 ```
 
 A navegação usa `Navigator` com `MaterialPageRoute` e **passagem de objetos por
-parâmetro** (ex.: o banco escolhido segue para as telas de detalhe e de
-agendamento).
+parâmetro** (ex.: o banco escolhido segue para a tela de detalhes; o artigo
+selecionado segue para o seu detalhe).
 
 ---
 
@@ -148,27 +125,25 @@ lib/
 ├── main.dart                  # ponto de entrada
 ├── app.dart                   # MaterialApp + tema + rota inicial
 ├── core/theme/                # cores e ThemeData (Material 3)
-├── models/                    # classes de dados (User, MilkBank, Appointment, ...)
-├── data/                      # dados mockados + AppointmentStore (estado em memória)
-├── widgets/                   # componentes reutilizáveis (botões, cards, badges)
+├── models/                    # classes de dados (User, MilkBank, ContentArticle, ...)
+├── data/                      # dados mockados (bancos, conteúdos, dashboard, usuários)
+├── widgets/                   # componentes reutilizáveis (cards, mapa mockado, gráfico, vídeo)
 └── screens/                   # telas, agrupadas por funcionalidade
     ├── splash/
     ├── login/
     ├── shell/                 # BottomNavigationBar por perfil
     ├── contents/
     ├── banks/
-    ├── appointment/
     └── dashboard/
 ```
 
-**Dados mockados** ficam concentrados em `lib/data/` (bancos, conteúdos,
-usuários, dashboard), modelados por classes em `lib/models/` — nada de dados
-espalhados diretamente nas telas.
+**Dados mockados** ficam concentrados em `lib/data/`, modelados por classes em
+`lib/models/` — nada de dados espalhados diretamente nas telas.
 
 **Tecnologias/conceitos:** Flutter, Material Design 3, `StatefulWidget` +
 `setState`, `TextEditingController`, `Form`/validação, `Navigator`,
-`ChangeNotifier` (para refletir novos agendamentos entre telas), fontes
-customizadas (Nunito/Inter).
+`CustomPainter` (mapa e gráfico donut mockados), `url_launcher` (abre o
+discador), fontes customizadas (Nunito/Inter).
 
 ---
 
