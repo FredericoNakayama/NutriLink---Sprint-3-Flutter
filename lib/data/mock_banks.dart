@@ -1,0 +1,81 @@
+import '../models/milk_bank.dart';
+
+/// Lista mockada de Bancos de Leite Humano (referência: região de São Paulo).
+class MockBanks {
+  MockBanks._();
+
+  static const List<MilkBank> all = [
+    MilkBank(
+      id: 1,
+      name: 'BLH Lactare — Pinheiros',
+      network: MilkBankNetwork.lactare,
+      address: 'Rua Cardeal Arcoverde, 423 — Pinheiros, São Paulo – SP',
+      cep: 'CEP 05407-001',
+      phone: '(11) 3022-4891',
+      hours: 'Seg–Sex: 7h–17h',
+      isOpen: true,
+      rating: 4.9,
+      distance: '1,2 km',
+    ),
+    MilkBank(
+      id: 2,
+      name: 'BLH Hospital das Clínicas',
+      network: MilkBankNetwork.rblh,
+      address: 'Av. Dr. Enéas de Carvalho Aguiar, 255 — Cerqueira César, SP',
+      cep: 'CEP 05403-000',
+      phone: '(11) 2661-6000',
+      hours: '24 horas',
+      isOpen: true,
+      rating: 4.8,
+      distance: '2,7 km',
+    ),
+    MilkBank(
+      id: 3,
+      name: 'BLH Maternidade Pro Matre',
+      network: MilkBankNetwork.rblh,
+      address: 'Rua Maestro Cardim, 769 — Bela Vista, São Paulo – SP',
+      cep: 'CEP 01323-001',
+      phone: '(11) 3253-0400',
+      hours: 'Seg–Sáb: 8h–18h',
+      isOpen: false,
+      rating: 4.7,
+      distance: '3,4 km',
+    ),
+    MilkBank(
+      id: 4,
+      name: 'BLH Lactare — Moema',
+      network: MilkBankNetwork.lactare,
+      address: 'Alameda dos Arapanés, 820 — Moema, São Paulo – SP',
+      cep: 'CEP 04524-001',
+      phone: '(11) 5052-9100',
+      hours: 'Seg–Sex: 7h–18h',
+      isOpen: true,
+      rating: 4.9,
+      distance: '4,1 km',
+    ),
+    MilkBank(
+      id: 5,
+      name: 'BLH Santa Casa de São Paulo',
+      network: MilkBankNetwork.rblh,
+      address: 'Rua Dr. Cesário Mota Junior, 112 — Vila Buarque, SP',
+      cep: 'CEP 01221-020',
+      phone: '(11) 3214-4000',
+      hours: '24 horas',
+      isOpen: true,
+      rating: 4.6,
+      distance: '4,8 km',
+    ),
+    MilkBank(
+      id: 6,
+      name: 'BLH Hospital e Maternidade Santa Joana',
+      network: MilkBankNetwork.lactare,
+      address: 'Rua do Paraíso, 432 — Paraíso, São Paulo – SP',
+      cep: 'CEP 04103-000',
+      phone: '(11) 3138-1100',
+      hours: 'Seg–Sex: 8h–17h',
+      isOpen: true,
+      rating: 4.8,
+      distance: '5,5 km',
+    ),
+  ];
+}
