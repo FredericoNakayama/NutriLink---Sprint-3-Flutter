@@ -1,21 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../models/milk_bank.dart';
 import '../../widgets/badges.dart';
+import '../../widgets/mock_map.dart';
 import '../../widgets/primary_button.dart';
-import '../appointment/appointment_form_screen.dart';
 
 /// Detalhes de um banco de leite, recebido por parâmetro a partir da listagem.
+///
+/// Inclui um mapa ilustrativo da localização e um botão que abre o discador do
+/// celular com o telefone do banco — o agendamento é feito por ligação, já que
+/// muitos bancos de leite do Brasil atendem apenas por telefone.
 class BankDetailScreen extends StatelessWidget {
   final MilkBank bank;
 
   const BankDetailScreen({super.key, required this.bank});
 
-  void _goToScheduling(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => AppointmentFormScreen(bank: bank)),
-    );
+  Future<void> _callBank(BuildContext context) async {
+    // Mantém apenas os dígitos para compor o esquema tel:.
+    final digits = bank.phone.replaceAll(RegExp(r'[^0-9]'), '');
+    final uri = Uri(scheme: 'tel', path: digits);
+
+    final launched = await launchUrl(uri, mode: LaunchMode.externalApplication);
+    if (!launched && context.mounted) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(
+            content: Text('Não foi possível abrir o discador. Ligue para ${bank.phone}.'),
+            backgroundColor: AppColors.warning,
+          ),
+        );
+    }
   }
 
   @override
@@ -113,6 +130,13 @@ class BankDetailScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
+
+          // Mapa ilustrativo da localização.
+          Text('Localização', style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 8),
+          MockMapView(label: bank.name, accent: accent),
+          const SizedBox(height: 16),
+
           _InfoTile(
             icon: Icons.location_on_outlined,
             title: 'Endereço',
@@ -134,11 +158,35 @@ class BankDetailScreen extends StatelessWidget {
             value: bank.distance,
           ),
           const SizedBox(height: 8),
+
+          // O agendamento é feito por telefone (abre o discador do celular).
+          Container(
+            padding: const EdgeInsets.all(14),
+            margin: const EdgeInsets.only(bottom: 12),
+            decoration: BoxDecoration(
+              color: AppColors.surfaceTint,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: AppColors.border),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.info_outline, size: 18, color: AppColors.primaryDark),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    'O agendamento da visita é feito diretamente com o banco '
+                    'por telefone. Toque abaixo para ligar.',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
+              ],
+            ),
+          ),
           PrimaryButton(
-            label: 'Agendar Visita',
-            icon: Icons.event_available_outlined,
+            label: 'Ligar para agendar',
+            icon: Icons.phone,
             color: accent,
-            onPressed: () => _goToScheduling(context),
+            onPressed: () => _callBank(context),
           ),
         ],
       ),
