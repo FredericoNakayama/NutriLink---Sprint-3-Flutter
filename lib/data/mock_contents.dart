@@ -1,6 +1,9 @@
 import '../models/content_article.dart';
 
 /// Conteúdos educativos mockados do espaço "Conteúdos" do NutriLink.
+///
+/// Cada guia possui, além do texto, uma videoaula representada por uma
+/// thumbnail mockada (não há reprodução de vídeo real nesta Sprint).
 class MockContents {
   MockContents._();
 
@@ -13,6 +16,8 @@ class MockContents {
           'Aprenda o passo a passo para extrair o leite com as mãos de forma '
           'segura, confortável e eficiente.',
       readTime: '4 min de leitura',
+      videoTitle: 'Demonstração: extração manual passo a passo',
+      videoDuration: '4:12',
       sections: [
         ContentSection(
           heading: 'Preparação',
@@ -45,6 +50,8 @@ class MockContents {
           'Saiba por quanto tempo e como conservar o leite materno extraído '
           'preservando todas as suas propriedades.',
       readTime: '3 min de leitura',
+      videoTitle: 'Como higienizar e etiquetar os frascos',
+      videoDuration: '3:05',
       sections: [
         ContentSection(
           heading: 'Frasco correto',
@@ -75,6 +82,8 @@ class MockContents {
           'Uma boa pega evita fissuras e garante que o bebê mame de forma '
           'eficaz. Veja os sinais de que está tudo certo.',
       readTime: '5 min de leitura',
+      videoTitle: 'Identificando a pega correta na prática',
+      videoDuration: '5:38',
       sections: [
         ContentSection(
           heading: 'O que observar',
@@ -100,6 +109,8 @@ class MockContents {
           'A produção funciona por oferta e demanda. Conheça hábitos que '
           'ajudam a manter e aumentar a quantidade de leite.',
       readTime: '4 min de leitura',
+      videoTitle: 'Rotina de estímulo para aumentar a produção',
+      videoDuration: '4:47',
       sections: [
         ContentSection(
           heading: 'Oferta e demanda',
@@ -124,6 +135,8 @@ class MockContents {
           'Cuidados de higiene simples que garantem a segurança do leite '
           'doado do início ao fim do processo.',
       readTime: '3 min de leitura',
+      videoTitle: 'Rotina de higiene antes da extração',
+      videoDuration: '3:22',
       sections: [
         ContentSection(
           heading: 'Antes de começar',
@@ -148,6 +161,8 @@ class MockContents {
           'Descubra os critérios para se tornar uma doadora de leite humano '
           'e como funciona a triagem.',
       readTime: '2 min de leitura',
+      videoTitle: 'Entenda a triagem de doadoras',
+      videoDuration: '2:54',
       sections: [
         ContentSection(
           heading: 'Critérios básicos',

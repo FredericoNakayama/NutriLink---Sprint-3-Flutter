@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../models/content_article.dart';
+import '../../widgets/video_thumbnail.dart';
 
 /// Detalhe de um conteúdo educativo, recebido por parâmetro a partir da lista.
 class ContentDetailScreen extends StatelessWidget {
@@ -59,7 +60,21 @@ class ContentDetailScreen extends StatelessWidget {
               height: 1.5,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 20),
+
+          // Videoaula mockada que acompanha o guia.
+          Row(
+            children: [
+              const Icon(Icons.videocam_outlined, size: 18, color: AppColors.primary),
+              const SizedBox(width: 8),
+              Text('Videoaula', style: Theme.of(context).textTheme.titleMedium),
+            ],
+          ),
+          const SizedBox(height: 10),
+          VideoThumbnail(
+            title: article.videoTitle,
+            duration: article.videoDuration,
+          ),
           const Divider(height: 32),
           for (final section in article.sections) ...[
             Text(section.heading, style: Theme.of(context).textTheme.titleMedium),

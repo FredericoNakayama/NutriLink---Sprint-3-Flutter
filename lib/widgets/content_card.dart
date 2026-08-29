@@ -110,6 +110,18 @@ class ContentCard extends StatelessWidget {
                             color: AppColors.textSoft,
                           ),
                         ),
+                        const SizedBox(width: 8),
+                        const Icon(Icons.play_circle_outline,
+                            size: 13, color: AppColors.textSoft),
+                        const SizedBox(width: 3),
+                        const Text(
+                          'Vídeo',
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: 11,
+                            color: AppColors.textSoft,
+                          ),
+                        ),
                         const Spacer(),
                         Text(
                           'Ler artigo',

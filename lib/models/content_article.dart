@@ -33,6 +33,13 @@ class ContentArticle {
   final String readTime;
   final List<ContentSection> sections;
 
+  /// Título da videoaula que acompanha o guia (representada por uma
+  /// thumbnail mockada — não há vídeo real reproduzível nesta Sprint).
+  final String videoTitle;
+
+  /// Duração exibida na thumbnail do vídeo (ex.: "3:20").
+  final String videoDuration;
+
   const ContentArticle({
     required this.id,
     required this.category,
@@ -40,5 +47,7 @@ class ContentArticle {
     required this.summary,
     required this.readTime,
     required this.sections,
+    required this.videoTitle,
+    required this.videoDuration,
   });
 }
