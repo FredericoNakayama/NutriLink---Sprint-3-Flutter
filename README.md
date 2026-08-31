@@ -45,7 +45,7 @@ indicadores da rede — reforçando o controle de acesso por tipo de usuário.
 
 ## 🔗 Repositório e vídeo
 
-- **Repositório GitHub:** _<adicionar link após criar o repositório>_
+- **Repositório GitHub:** https://github.com/FredericoNakayama/NutriLink---Sprint-3-Flutter.git
 - **Vídeo de demonstração:** _<adicionar link do vídeo de navegação>_
 
 ---
