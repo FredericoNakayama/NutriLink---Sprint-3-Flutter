@@ -180,5 +180,38 @@ class MockContents {
         ),
       ],
     ),
+    ContentArticle(
+      id: 'primeira-visita',
+      category: ContentCategory.doacao,
+      title: 'A Primeira Visita ao Banco de Leite',
+      summary:
+          'O que levar e o que esperar no seu primeiro atendimento como '
+          'doadora de leite humano.',
+      readTime: '3 min de leitura',
+      videoTitle: 'Como é a primeira visita ao banco',
+      videoDuration: '3:40',
+      sections: [
+        ContentSection(
+          heading: 'O que levar',
+          body:
+              'Leve um documento de identidade com foto e, se já tiver, a '
+              'Caderneta de Saúde da Criança. Roupas confortáveis facilitam a '
+              'amamentação e a extração no local.',
+        ),
+        ContentSection(
+          heading: 'A triagem',
+          body:
+              'Na primeira visita a equipe faz uma entrevista rápida sobre a '
+              'sua saúde e a do bebê. É um bate-papo acolhedor, sem exames '
+              'invasivos.',
+        ),
+        ContentSection(
+          heading: 'Chegue com calma',
+          body:
+              'Chegue com cerca de 10 minutos de antecedência para o cadastro. '
+              'Você pode levar o bebê — o ambiente é preparado para recebê-lo.',
+        ),
+      ],
+    ),
   ];
 }
